@@ -1,3 +1,4 @@
+
 /* Alunos:
     Esdras Costa
     Raquel Tiemi Sato
@@ -20,24 +21,21 @@ import javax.swing.JTextField;
  */
 public class TelaPrincipal extends javax.swing.JFrame {
 
-   
     ArrayList listaAlunos = new ArrayList();
-    
 
     /**
      * Creates new form TelaPrincipal
      */
     public TelaPrincipal() {
-        
+
         JFrame tela = new TelaPrincipal("Tela");
         tela.setVisible(true);
         initComponents();
     }
-        
-        
 
     TelaPrincipal(String tela) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
@@ -49,39 +47,63 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
+        // jScrollPane1 = new javax.swing.JScrollPane(); É em relação ao scroll view
         jTextArea1 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
-        labelAtividade = new javax.swing.JLabel();
-        TextFieldAtividade = new javax.swing.JTextField();
-        buttonAtividade = new javax.swing.JButton();
+        
+        // Código mais enxuto e organizado - não é necessário definir a atividade na lista, visto que o programa não mantém as informações
+        // labelAtividade = new javax.swing.JLabel(); 
+        // TextFieldAtividade = new javax.swing.JTextField();
+        // buttonAtividade = new javax.swing.JButton();
+        
+        JTable TabListagem; // Criariamos uma tabela para listar o nome dos alunos
+        int pagina = 0; // Variavél para ter controle de qual página está selecionada
         labelNomeAluno = new javax.swing.JLabel();
         textFieldAluno = new javax.swing.JTextField();
         buttonAluno = new javax.swing.JButton();
         buttonImprimir = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
+        // jTextArea1.setColumns(20);
+        // jTextArea1.setRows(5);
+        // Quebra de complexidade - não é necessário criar uma tabela com várias atividades e 
+        // pouparia mais recursos de processamento se utilizasse paginiação no lugar de uma scroll view.
+
+        // Paginação:
+    private void paginacao(listaAlunos, pagina){
+        if() {
+            for (int i = 0; i <= listaAlunos.length; i++) {
+                if() {
+                   
+               
+            }
+        }
+    }
+    
+}
+        
+        
         jScrollPane1.setViewportView(jTextArea1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelAtividade.setText("Atividade");
+        // labelAtividade.setText("Atividade");
 
-        TextFieldAtividade.setText("Digite a atividade");
-        TextFieldAtividade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextFieldAtividadeActionPerformed(evt);
-            }
-        });
+        // TextFieldAtividade.setText("Digite a atividade");
+        // TextFieldAtividade.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         TextFieldAtividadeActionPerformed(evt);
+        //     }
+        // });
 
-        buttonAtividade.setText("Inserir Atividade");
-        buttonAtividade.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAtividadeActionPerformed(evt);
-            }
-        });
+        // buttonAtividade.setText("Inserir Atividade");
+        // buttonAtividade.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         buttonAtividadeActionPerformed(evt);
+        //     }
+        // });
+
+        //Foco na funcionalidade - Como é um programa reutilizável não é necessário criar várias listas uma para cada atividade.
 
         labelNomeAluno.setText("Nome:");
 
@@ -92,10 +114,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        // buttonAluno.setText("Inserir Aluno");
+        // buttonAluno.addActionListener(new java.awt.event.ActionListener() {
+        //     public void actionPerformed(java.awt.event.ActionEvent evt) {
+        //         buttonAlunoActionPerformed(evt);
+        //     }
+        // });
+
+        //Programação funcional
         buttonAluno.setText("Inserir Aluno");
         buttonAluno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buttonAlunoActionPerformed(evt);
+               System.out.println(buttonAlunoActionPerformed(evt));
             }
         });
 
@@ -168,40 +198,52 @@ public class TelaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void textFieldAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textFieldAlunoActionPerformed
+    private void textFieldAlunoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_textFieldAlunoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_textFieldAlunoActionPerformed
+    }// GEN-LAST:event_textFieldAlunoActionPerformed
 
-    private void buttonAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAtividadeActionPerformed
-            String atividade = TextFieldAtividade.getText();
-            
-            
+    private void buttonAtividadeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonAtividadeActionPerformed
+        String atividade = TextFieldAtividade.getText();
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_buttonAtividadeActionPerformed
+    }// GEN-LAST:event_buttonAtividadeActionPerformed
 
-    private void TextFieldAtividadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextFieldAtividadeActionPerformed
+    private void TextFieldAtividadeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_TextFieldAtividadeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextFieldAtividadeActionPerformed
+    }// GEN-LAST:event_TextFieldAtividadeActionPerformed
 
-    private void buttonAlunoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAlunoActionPerformed
+    private void buttonAlunoActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonAlunoActionPerformed
+        /*
+         * String compara = textFieldAluno.getText(); for (int i = 0; i <=
+         * listaAlunos.length; i++) { if (compara == listaAlunos[i]) {
+         * 
+         * }
+         * 
+         * } }//GEN-LAST:event_buttonAlunoActionPerformed
+         */
+
+        // Programação funcional
+
         String compara = textFieldAluno.getText();
         for (int i = 0; i <= listaAlunos.length; i++) {
-            if (compara == listaAlunos[i]) {
-                
+            if (compara.equals(listaAlunos[i])) {
+                return "Aluno já Cadastrado!";
             }
-            
         }
-    }//GEN-LAST:event_buttonAlunoActionPerformed
+        return "Aluno inserido com sucesso!";
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel. For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -211,15 +253,19 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null,
+                    ex);
         }
-        //</editor-fold>
+        // </editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -229,8 +275,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 JLabel labelNomeAluno = new JLabel();
                 JTextField textFieldAluno = new JTextField();
                 JTextField textFieldAtividade = new JTextField();
-                
-                
             }
         });
     }
@@ -247,5 +291,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel labelAtividade;
     private javax.swing.JLabel labelNomeAluno;
     private javax.swing.JTextField textFieldAluno;
+
     // End of variables declaration//GEN-END:variables
 }
